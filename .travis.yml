@@ -1,9 +1,8 @@
 language: go
 sudo: required
 go:
-  - 1.7
-  - 1.8
-  - 1.9
+  - 1.11
+  - 1.12
 env:
   - TEST=unit
   - TEST=istanbul
@@ -13,8 +12,8 @@ services:
   - docker
 
 install:
-  - go get github.com/Masterminds/glide
   - go get github.com/onsi/ginkgo/ginkgo
+  - go mod download
 
 script:
   - 'if [ ${TEST} = "unit" ]; then
@@ -34,7 +33,7 @@ branches:
 jobs:
   include:
     - stage: release
-      go: 1.9
+      go: 1.11
       if: tag =~ ^v
       env:
         - TEST=none
