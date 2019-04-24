@@ -1,8 +1,8 @@
 language: go
 sudo: required
 go:
-  - 1.11
-  - 1.12
+  - 1.11.5
+  - 1.12.4
 env:
   - TEST=unit
   - TEST=istanbul
