@@ -12,8 +12,8 @@ services:
   - docker
 
 install:
-  - unset GOPATH
   - go get github.com/onsi/ginkgo/ginkgo
+  - unset GOPATH
 
 script:
   - 'if [ ${TEST} = "unit" ]; then
